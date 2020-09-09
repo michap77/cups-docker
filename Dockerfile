@@ -1,9 +1,9 @@
-FROM debian:stretch
+FROM debian:testing
 
 MAINTAINER monkeydri <monkeydri@github.com>
 
 RUN apt-get update && apt-get -y install \
-cups=2.2.1* \
+cups=2.3.3* \
 cups-filters \
 cups-pdf \
 whois \
@@ -25,8 +25,8 @@ VOLUME /etc/cups/ /var/log/cups /var/spool/cups /var/cache/cups
 COPY etc-pam.d-cups /etc/pam.d/cups
 
 # Copy brother driver installer and installer script
-COPY linux-brprinter-installer-2.1.1-1 /root/linux-brprinter-installer-2.1.1-1
-RUN chmod +x /root/linux-brprinter-installer-2.1.1-1
+COPY linux-brprinter-installer-2.2.2-1 /root/linux-brprinter-installer-2.2.2-1
+RUN chmod +x /root/linux-brprinter-installer-2.2.2-1
 COPY install_brother_driver.sh /root/install_brother_driver.sh
 RUN chmod +x /root/install_brother_driver.sh
 

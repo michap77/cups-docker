@@ -9,6 +9,6 @@ cups-server:
   environment:
     - CUPS_USER_ADMIN=admin
     - CUPS_USER_PASSWORD=secr3t
-    - PRINTER_MODEL=HL-L2300D
+    - PRINTER_MODEL=HL-1250
   devices:
     - "${PRINTER_ADDRESS}"
